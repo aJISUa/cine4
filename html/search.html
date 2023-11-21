@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet" href="../css/search.css" />
+        <title>영화 검색</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
+            <ul class="nav">
+                <li><a href="chart.html">영화 차트</a></li>
+                <li><a href="search.html">영화 검색</a></li>
+                <li><a href="review.html">감상문</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
+
+        <main class="main search-main">
+            <h2 class="text-heading">영화 검색</h2>
+            <p class="text-description">
+                영화 제목으로 검색해보자
+            </p>
+            <div class="input-search-container">
+                <input
+                    type="text"
+                    placeholder="제목으로 검색해 보세요"
+                    class="input-search"
+                    id="input-search"
+                />
+                <div class="img-search"></div>
+            </div>
+            <section class="container-searched-list">
+                <strong></strong>
+                <ol class="grid-box"></ol>
+            </section>
+        </main>
+
+       
+        <script type="module" src="../js/search.js"></script>
+    </body>
+</html>

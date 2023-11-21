@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/main.css" />
+        <link rel="stylesheet" href="../css/searchResult.css" />
+        <title>영화 검색 결과</title>
+    </head>
+
+    <body>
+        <div class="wrapper-etc">
+            <img
+                class="img-etc"
+                src="../icons/logo-three.svg"
+                alt="로딩중 아이콘"
+            />
+            <strong class="text-etc">로딩중...</strong>
+        </div>
+
+        <header class="header">
+            <h1 class="img-logo">
+                <a href="../index.html">
+                    <img
+                        src="../icons/logo-title.svg"
+                        alt="로고이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
+            <ul class="nav">
+                <li><a href="chart.html">영화 차트</a></li>
+                <li><a href="search.html" class="selected">영화 검색</a></li>
+                <li><a href="review.html">감상문</a></li>
+                <li><a href="mypage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </header>
+
+        <main class="search-result-main main">
+            <article class="movie-article">
+                <h2 class="movie-title page-title"></h2>
+                <h3 class="sub-movie-title"></h3>
+                <div class="card-info-wrapper">
+                    <img
+                        src="../images/post_default.jpg"
+                        class="poster-card card-L search"
+                        alt="영화 포스터"
+                    />
+                    <div class="right-part">
+                        <div class="container-review-btn">
+                            <div class="img-wbg"></div>
+                            <button type="button" class="btn-ms">
+                                영화 감상문 작성하기
+                            </button>
+                        </div>
+                        <dl class="movie-info">
+                            <div>
+                                <dt>개봉</dt>
+                                <dd class="release"></dd>
+                            </div>
+                            <div>
+                                <dt>감독</dt>
+                                <dd class="director"></dd>
+                            </div>
+                            <div>
+                                <dt>배우</dt>
+                                <dd class="actor"></dd>
+                            </div>
+                            <div>
+                                <dt>장르</dt>
+                                <dd class="genre"></dd>
+                            </div>
+                            <div>
+                                <dt>상영시간</dt>
+                                <dd class="runtime"></dd>
+                            </div>
+                            <div>
+                                <dt>관람등급</dt>
+                                <dd class="rating"></dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="movie-summary">
+                    <dt>줄거리</dt>
+                    <dd>줄거리가 제공되지 않습니다 :)</dd>
+                </div>
+            </article>
+        </main>
+
+      
+        <script type="module" src="../js/searchResult.js"></script>
+    </body>
+</html>
