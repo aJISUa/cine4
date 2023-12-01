@@ -3,92 +3,110 @@
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/main.css" />
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1.0, user-scalable=no">        <link rel="stylesheet" href="s.css" />
         <link rel="stylesheet" href="../css/searchResult.css" />
+        <link rel="stylesheet" href="../css/main.css" />
         <title>영화 검색 결과</title>
     </head>
 
     <body>
-        <div class="wrapper-etc">
-            <img
-                class="img-etc"
-                src="../icons/logo-three.svg"
-                alt="로딩중 아이콘"
-            />
-            <strong class="text-etc">로딩중...</strong>
-        </div>
-
+        
         <header class="header">
             <h1 class="img-logo">
-                <a href="../index.html">
+                <a href="./chart.html">
                     <img
-                        src="../icons/logo-title.svg"
+                        src="../image/redfulllogo.png"
                         alt="로고이미지"
                     />
                 </a>
                 <button class="btn-nav"></button>
             </h1>
-            <ul class="nav">
-                <li><a href="chart.html">영화 차트</a></li>
-                <li><a href="search.html" class="selected">영화 검색</a></li>
-                <li><a href="review.html">감상문</a></li>
-                <li><a href="mypage.html">마이페이지</a></li>
-                <li></li>
-            </ul>
+            <h1 class="img-search">
+                <a href="./search.html">
+                    <img
+                        src="../image/search.png"
+                        alt="검색이미지"
+                    />
+                </a>
+                <button class="btn-nav"></button>
+            </h1>
         </header>
 
-        <main class="search-result-main main">
-            <article class="movie-article">
-                <h2 class="movie-title page-title"></h2>
-                <h3 class="sub-movie-title"></h3>
-                <div class="card-info-wrapper">
-                    <img
-                        src="../images/post_default.jpg"
-                        class="poster-card card-L search"
-                        alt="영화 포스터"
-                    />
-                    <div class="right-part">
-                        <div class="container-review-btn">
-                            <div class="img-wbg"></div>
-                            <button type="button" class="btn-ms">
-                                영화 감상문 작성하기
-                            </button>
-                        </div>
-                        <dl class="movie-info">
-                            <div>
-                                <dt>개봉</dt>
-                                <dd class="release"></dd>
-                            </div>
-                            <div>
-                                <dt>감독</dt>
-                                <dd class="director"></dd>
-                            </div>
-                            <div>
-                                <dt>배우</dt>
-                                <dd class="actor"></dd>
-                            </div>
-                            <div>
-                                <dt>장르</dt>
-                                <dd class="genre"></dd>
-                            </div>
-                            <div>
-                                <dt>상영시간</dt>
-                                <dd class="runtime"></dd>
-                            </div>
-                            <div>
-                                <dt>관람등급</dt>
-                                <dd class="rating"></dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-                <div class="movie-summary">
-                    <dt>줄거리</dt>
-                    <dd>줄거리가 제공되지 않습니다 :)</dd>
-                </div>
-            </article>
-        </main>
+
+
+        <img
+        src="../image/redlogo.png"
+        class="stll-card"
+        alt="영화 스틸컷"
+        />
+        <img
+        src="../image/redlogo.png"
+        class="poster-card"
+        alt="영화 포스터"
+        />
+        <div>                             
+            <h3 class="detailmovie-title"></h3>
+        </div>
+        <div class="sub-detaildata">
+            <dd class="release"></dd>
+            <dd class="genre"></dd>
+        </div>
+
+        <link rel="stylesheet" href="../like/like.css">
+            <form name="heart" id="heart" method="post" action="./heart">
+                <fieldset class="heart">
+                    <input id="btn-heart" type="checkbox" class="btn-heart" />
+                    <label for="btn-heart" class="em-heart">🧡</label>
+                </fieldset>
+            </form>    
+        <script src="../like/like.js"></script>
+
+        <link rel="stylesheet" href="../star-rating/star-rating.css" />
+            <!-- 데이터 전송 방식 POST, 전송할 URL ./textstar -->
+            <form name="star" id="star" method="post" action="./textstar">
+                <!-- 폼 요소를 그룹화하고 테두리 생성 -->
+                <fieldset class="starrating">
+                    <legend id="textstar" class="textstar">별점</legend>
+                    <input type="radio" name="starrating" value="5" id="rate5" /><label for="rate5">⭐</label>
+                    <input type="radio" name="starrating" value="4" id="rate4" /><label for="rate4">⭐</label>
+                    <input type="radio" name="starrating" value="3" id="rate3" /><label for="rate3">⭐</label>
+                    <input type="radio" name="starrating" value="2" id="rate2" /><label for="rate2">⭐</label>
+                    <input type="radio" name="starrating" value="1" id="rate1" /><label for="rate1">⭐</label>
+                </fieldset>
+            </form>
+        <script src="../star-rating/star-rating.js"></script>
+
+        <div class="sub-detail">
+            <div class="movie-data">
+                <dt>감독</dt>
+                <dd class="director"></dd>
+
+                <dt>배우</dt>
+                <dd class="actor"></dd>
+
+                <dt>상영시간</dt>
+                <dd class="runtime"></dd>
+                
+                <dt>관람등급</dt>
+                <dd class="rating"></dd>
+            </div>
+            <div class="movie-summary">
+                <dt>줄거리</dt>
+                <dd>줄거리가 제공되지 않습니다.</dd>
+            </div>
+        </div>       
+
+        
+
+        <footer class="footer">
+            <ul class="nav">
+                <li><a href="./chart.html">홈</a></li>
+                <li><a href="./search.html">커뮤니티</a></li>
+                <li><a href="./event.html">이벤트</a></li>
+                <li><a href="./mypage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </footer>
 
       
         <script type="module" src="../js/searchResult.js"></script>

@@ -38,7 +38,7 @@ const setMovieDetail = async (movie, detailResult) => {
     //영화 포스터를 li 엘리먼트의 배경 이미지로 설정
     if (li instanceof HTMLLIElement) {
         const poster = detailResult.posters.split('|')[0] === ''
-            ? '../assets/images/post_default.jpg'
+            ? '../image/redfullogo.png'
             : detailResult.posters.split('|')[0];
         li.style.backgroundImage = `url(${poster})`;
         //클릭 이벤트 -> 영화 상세 페이지로 이동
@@ -46,69 +46,6 @@ const setMovieDetail = async (movie, detailResult) => {
             location.href = `searchResult.html?movieId=${detailResult.movieId}&movieSeq=${detailResult.movieSeq}`;
         });
 
-        //상세 정보 표시
-        //각 엘리먼트를 찾아 각각에 대한 텍스트 설정
-        const movieTitle = li.querySelector('#movie-title');
-        const movieEngTitle = li.querySelector('#movie-title-eng');
-        const textRelease = li.querySelector('#text-release');
-        const textDirector = li.querySelector('#text-director');
-        const textActor = li.querySelector('#text-actor');
-        const textGenre = li.querySelector('#text-genre');
-
-        //각 정보를 표시하고, 정보가 없는 경우 처리
-        if (movieTitle instanceof HTMLElement) {
-            movieTitle.textContent = `${movie.movieNm}`;
-        }
-        if (movieEngTitle instanceof HTMLSpanElement) {
-            movieEngTitle.textContent = `${detailResult.titleEng}`;
-        }
-        if (textRelease instanceof HTMLElement) {
-            if (movie.openDt !== '') {
-                const dates = movie.openDt;
-                let dateText = '';
-                for (let date of dates) {
-                    dateText += date.split('-').join('.');
-                }
-                textRelease.textContent = `${dateText}`;
-            }
-            else {
-                textRelease.textContent = '정보 없음';
-            }
-        }
-        if (textDirector instanceof HTMLElement) {
-            if (detailResult.directors.director[0].directorNm !== '') {
-                textDirector.textContent = `${detailResult.directors.director[0].directorNm}`;
-            }
-            else {
-                textDirector.textContent = '정보 없음';
-            }
-        }
-        if (textActor instanceof HTMLElement) {
-            const actors = detailResult.actors.actor;
-            if (actors[0].actorNm !== '') {
-                let actorText = '';
-                for (let actor of actors) {
-                    actorText += actor.actorNm + ' | ';
-                }
-                textActor.textContent = `${actorText}`;
-            }
-            else {
-                textActor.textContent = '정보 없음';
-            }
-        }
-        if (textGenre instanceof HTMLElement) {
-            const genres = detailResult.genre;
-            if (genres !== '') {
-                let genreText = '';
-                for (let genre of genres) {
-                    genreText += genre.split(',').join(' | ');
-                }
-                textGenre.textContent = `${genreText}`;
-            }
-            else {
-                textGenre.textContent = '정보 없음';
-            }
-        }
     }
 };
 

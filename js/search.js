@@ -5,6 +5,7 @@ const searchInput = document.getElementById('input-search');
 const searchedList = document.querySelector('.container-searched-list');
 const gridBox = document.querySelector('.grid-box');
 const strong = document.querySelector('strong');
+const searchButton = document.getElementById('search-button');
 
 //검색 쿼리 저장 객체 생성
 let queryObj = {
@@ -48,6 +49,15 @@ async function search(searchInputValue, startCount = 0) {
         createObserver(gridBox.lastElementChild);
     }
 }
+
+searchInput === null || searchInput === void 0
+    ? void 0
+    : searchButton.addEventListener('click', () => {
+        // 검색어가 빈 문자열이 아닌 경우(유효) 함수 호출
+        if (searchInput.value !== '' && searchInput.value.trim() !== '') {
+            search(searchInput.value);
+        }
+    });
 
 //검색 결과 받아와 화면에 표시하는 함수
 const createSearchedList = (list, compare) => {
@@ -122,16 +132,21 @@ const createSearchedList = (list, compare) => {
         li.classList.add('searched-movie');
         containerPoster.classList.add('container-poster');
 
+
+
         //포스터 이미지 설정
         //속성 비어 있지 않다면 경로를 src 속성으로 설정
-        if (orderedResult[i].posters !== '') {
+        const poster_str = orderedResult[i].posters.split("|")[0] === "" ? "" : orderedResult[i].posters.split("|")[0];
+
+        if (poster_str !== "") {
             posterImg.setAttribute(
                 'src',
-                orderedResult[i].posters.substring(0, 60)
+                orderedResult[i].posters.split("|")[0]
             );
-        } else {//비어있으면 기본 포스터 이미지
-            posterImg.setAttribute('src', '../assets/images/post_default.jpg');
+        } else {
+            posterImg.setAttribute('src', '../image/redlogo.png');
         }
+    
 
         //생성된 요소에 클래스 추가
         posterImg.classList.add('img-poster');

@@ -1,19 +1,18 @@
-.header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+
+.input-search-container {
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: fixed;
-  top: 0;
-  z-index: 9999;
-  width: 100%;
-  background-color: #292929;
+  align-items: center;
 }
+
+.input-container {
+  flex: 1; /* 입력 창이 가능한 최대 너비를 차지하도록 설정 */
+  margin-right: 10px; /* 버튼과의 간격 조절 */
+}
+
+.input-search {
+  width: 100%;
+}
+
 
 .img-logo {
   height: 70px;
@@ -32,27 +31,6 @@
   width: 25px;
   height: 25px;
   background: url("../../assets/icons/menu.svg") no-repeat 0 0;
-}
-
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 90px;
-  letter-spacing: -0.02em;
-}
-
-.nav li {
-  padding-left: 24px;
-  color: #cfcfcf;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.nav li:hover,
-.nav li a.selected {
-  color: #ff5f5f;
 }
 
 .main {
@@ -84,7 +62,7 @@
   min-height: calc(100vh - 150px);
   margin-top: 20px;
   background-color: #1e1e1e;
-  color: #f1f1f1;
+  color: black;
 }
 
 .wrapper-etc .img-etc {
@@ -102,65 +80,11 @@
   display: none;
 }
 
-.footer {
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 10px;
-  background-color: #292929;
-  color: #dedede;
-  text-align: center;
-}
 
-.footer .desc {
-  display: inline-block;
-  margin: 8px 0 5px;
-  font-size: 10px;
-}
+@media screen and (max-width: 844px) {
 
-.footer .wrapper-github {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 5px;
-  margin: 0 5% 5px;
-  font-size: 10px;
-  text-align: center;
-}
-
-.footer .wrapper-github .text-s {
-  font-size: 8px;
-}
-
-.page-title {
-  color: #f1f1f1;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 30px;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
   .img-logo img {
-    content: url("../../assets/icons/logo-title-s.svg");
+    content: url("../image/redfulllogo.png");
     margin: 13px 0 0 0;
     height: 52px;
   }
@@ -168,31 +92,7 @@
     display: block;
     top: 25px;
   }
-  .nav {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    margin-right: 0;
-  }
-  .nav.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav li {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .nav li:last-child {
-    padding-bottom: 20px;
-  }
-  .nav li a {
-    display: block;
-  }
+ 
   .main {
     margin-bottom: 30px;
   }
@@ -208,7 +108,7 @@
 
 .text-heading {
   margin-bottom: 17px;
-  color: #f1f1f1;
+  color: black;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
   line-height: 38px;
@@ -216,7 +116,7 @@
 
 .text-description {
   margin-bottom: 42px;
-  color: #8b8b8b;
+  color: black;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 18px;
 }
@@ -232,9 +132,9 @@
 .input-search-container .input-search {
   width: 100%;
   padding: 21px 51px 17px 33px;
-  border: 1px solid #8b8b8b;
+  border: 1px solid black;
   border-radius: 40px;
-  color: #cfcfcf;
+  color: black;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 18px;
   -webkit-box-sizing: border-box;
@@ -242,31 +142,31 @@
 }
 
 .input-search-container .input-search::-webkit-input-placeholder {
-  color: #8b8b8b;
+  color: black;
   font-size: 18px;
   line-height: 23px;
 }
 
 .input-search-container .input-search:-ms-input-placeholder {
-  color: #8b8b8b;
+  color: black;
   font-size: 18px;
   line-height: 23px;
 }
 
 .input-search-container .input-search::-ms-input-placeholder {
-  color: #8b8b8b;
+  color: black;
   font-size: 18px;
   line-height: 23px;
 }
 
 .input-search-container .input-search::placeholder {
-  color: #8b8b8b;
+  color: black;
   font-size: 18px;
   line-height: 23px;
 }
 
 .input-search-container .input-search:focus {
-  border-color: #cfcfcf;
+  border-color: black;
 }
 
 .input-search-container .img-search {
@@ -285,7 +185,7 @@
   max-width: 740px;
   padding: 20px 5px;
   margin: 0 auto;
-  color: #cfcfcf;
+  color: black;
   line-height: 1.37;
   text-align: left;
 }

@@ -4,52 +4,64 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/main.css" />
         <link rel="stylesheet" href="../css/search.css" />
+        <link rel="stylesheet" href="../css/main.css" />
         <title>영화 검색</title>
     </head>
 
     <body>
         <header class="header">
+            <!-- 로고 -> 홈 연결 예정 -->
             <h1 class="img-logo">
-                <a href="../index.html">
+                <a href="./chart.html">
                     <img
-                        src="../icons/logo-title.svg"
+                        src="../image/redfulllogo.png"
                         alt="로고이미지"
+                    />
+                </a>
+            </h1>
+            <h1 class="img-search">
+                <a href="./search.html">
+                    <img
+                        src="../image/search.png"
+                        alt="검색이미지"
                     />
                 </a>
                 <button class="btn-nav"></button>
             </h1>
-            <ul class="nav">
-                <li><a href="chart.html">영화 차트</a></li>
-                <li><a href="search.html">영화 검색</a></li>
-                <li><a href="review.html">감상문</a></li>
-                <li><a href="mypage.html">마이페이지</a></li>
-                <li></li>
-            </ul>
         </header>
 
         <main class="main search-main">
-            <h2 class="text-heading">영화 검색</h2>
-            <p class="text-description">
-                영화 제목으로 검색해보자
-            </p>
             <div class="input-search-container">
-                <input
-                    type="text"
-                    placeholder="제목으로 검색해 보세요"
-                    class="input-search"
-                    id="input-search"
-                />
-                <div class="img-search"></div>
+                <div class="input-container">
+                    <input
+                        type="text"
+                        placeholder="제목으로 검색해 보세요"
+                        class="input-search"
+                        id="input-search"
+                    />
+                </div>
+                <button class="search-button" id="search-button">
+                    <img src="../image/search.png" alt="Search">
+                </button>
             </div>
             <section class="container-searched-list">
                 <strong></strong>
                 <ol class="grid-box"></ol>
             </section>
         </main>
+        
 
-       
+        <footer class="footer">
+            <ul class="nav">
+                <li><a href="./chart.html">홈</a></li>
+                <li><a href="./search.html">커뮤니티</a></li>
+                <li><a href="./event.html">이벤트</a></li>
+                <li><a href="./mypage.html">마이페이지</a></li>
+                <li></li>
+            </ul>
+        </footer>
+           
         <script type="module" src="../js/search.js"></script>
     </body>
 </html>

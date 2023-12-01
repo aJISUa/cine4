@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>star rating</title>
+    <link rel="stylesheet" href="star-rating.css" />
+  </head>
+  <body>
+    <!-- 데이터 전송 방식 POST, 전송할 URL ./textstar -->
+    <form name="star" id="star" method="post" action="./textstar">
+      <!-- 폼 요소를 그룹화하고 테두리 생성 -->
+      <fieldset class="rating">
+        <legend id="textstar" class="textstar">별점</legend>
+          <input type="radio" name="rating" value="5" id="rate5" /><label for="rate5">⭐</label>
+          <input type="radio" name="rating" value="4" id="rate4" /><label for="rate4">⭐</label>
+          <input type="radio" name="rating" value="3" id="rate3" /><label for="rate3">⭐</label>
+          <input type="radio" name="rating" value="2" id="rate2" /><label for="rate2">⭐</label>
+          <input type="radio" name="rating" value="1" id="rate1" /><label for="rate1">⭐</label>
+      </fieldset>
+    </form>
+    <script src="star-rating.js"></script>
+  </body>
+</html>
+

@@ -32,7 +32,7 @@
 }
 
 body {
-  background: #1e1e1e;
+  background: #ffffff;
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
@@ -433,7 +433,7 @@ address {
 
 /* chrome input-box color reset */
 input {
-  -webkit-text-fill-color: #cfcfcf;
+  -webkit-text-fill-color: black;
 }
 
 input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, input:-webkit-autofill:active {
@@ -442,19 +442,19 @@ input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:foc
 }
 
 input::-webkit-input-placeholder {
-  -webkit-text-fill-color: #464646;
+  -webkit-text-fill-color: black;
 }
 
 input:-ms-input-placeholder {
-  -webkit-text-fill-color: #464646;
+  -webkit-text-fill-color: black;
 }
 
 input::-ms-input-placeholder {
-  -webkit-text-fill-color: #464646;
+  -webkit-text-fill-color: black;
 }
 
 input::placeholder {
-  -webkit-text-fill-color: #464646;
+  -webkit-text-fill-color: black;
 }
 
 input,
@@ -470,13 +470,13 @@ textarea {
   border-radius: 30px;
   background-color: #ff5f5f;
   font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  color: #ffffff;
+  color: #000000;
   text-align: center;
 }
 
 .btn-s.disabled, .btn-s:disabled, .btn-ms.disabled, .btn-ms:disabled, .btn-L.disabled, .btn-L:disabled {
   background-color: #ffc4c4;
-  color: #ffffff;
+  color: #000000;
   pointer-events: none;
 }
 
@@ -508,23 +508,49 @@ textarea {
   -webkit-transform: scale(1.03);
           transform: scale(1.03);
 }
-
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  width: 390px;
+  height: 70px; /* Adjust the height as needed */
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
   position: fixed;
   top: 0;
   z-index: 9999;
-  width: 100%;
-  background-color: #292929;
 }
+.footer {
+  width: 100%;
+  height: 100px; /* 필요에 따라 높이 조절 */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  background-color: white;
+}
+
+.footer .nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer .nav li {
+  margin-right: 10px; /* 각 li 요소 사이에 오른쪽 마진 추가 */
+}
+
+.footer .nav li:last-child {
+  margin-right: 0; /* 마지막 li 요소의 마진을 0으로 설정하여 마지막에 간격이 없도록 함 */
+}
+
+.footer .nav li a {
+  text-decoration: none;
+  color: black;
+}
+
 
 .img-logo {
   height: 70px;
@@ -555,9 +581,9 @@ textarea {
 
 .nav li {
   padding-left: 24px;
-  color: #cfcfcf;
+  color: #000000;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 14px;
+  font-size: 15px;
   cursor: pointer;
 }
 
@@ -568,7 +594,6 @@ textarea {
 
 .main {
   position: relative;
-  min-height: calc(100vh - 131px);
   margin-top: 70px;
 }
 
@@ -594,8 +619,8 @@ textarea {
   height: 100%;
   min-height: calc(100vh - 150px);
   margin-top: 20px;
-  background-color: #1e1e1e;
-  color: #f1f1f1;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .wrapper-etc .img-etc {
@@ -613,51 +638,8 @@ textarea {
   display: none;
 }
 
-.footer {
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 10px;
-  background-color: #292929;
-  color: #dedede;
-  text-align: center;
-}
-
-.footer .desc {
-  display: inline-block;
-  margin: 8px 0 5px;
-  font-size: 10px;
-}
-
-.footer .wrapper-github {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 5px;
-  margin: 0 5% 5px;
-  font-size: 10px;
-  text-align: center;
-}
-
-.footer .wrapper-github .text-s {
-  font-size: 8px;
-}
-
 .page-title {
-  color: #f1f1f1;
+  color: #000000;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
   text-align: center;
@@ -665,13 +647,48 @@ textarea {
 
 @media screen and (max-width: 768px) {
   .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: white;
+    border-bottom: 1px solid #ddd; /* 원하는 스타일로 헤더의 하단 경계선을 추가할 수 있습니다. */
   }
+  
+  /* Footer 스타일 수정 */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: white;
+    border-top: 1px solid #ddd; /* 원하는 스타일로 푸터의 상단 경계선을 추가할 수 있습니다. */
+  }
+  
+  .footer .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .footer .nav li {
+    margin-right: 10px; /* 각 li 요소 사이에 오른쪽 마진 추가 */
+  }
+  
+  .footer .nav li:last-child {
+    margin-right: 0; /* 마지막 li 요소의 마진을 0으로 설정하여 마지막에 간격이 없도록 함 */
+  }
+  
+  .footer .nav li a {
+    text-decoration: none;
+    color: black;
+  }
+  
   .img-logo img {
-    content: url("../../assets/icons/logo-title-s.svg");
+    content: url("../image/redfulllogo.png");
     margin: 13px 0 0 0;
     height: 52px;
   }
@@ -679,31 +696,7 @@ textarea {
     display: block;
     top: 25px;
   }
-  .nav {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    margin-right: 0;
-  }
-  .nav.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav li {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .nav li:last-child {
-    padding-bottom: 20px;
-  }
-  .nav li a {
-    display: block;
-  }
+
   .main {
     margin-bottom: 30px;
   }
@@ -714,7 +707,7 @@ textarea {
 
 .card-L, .card-m, .review-album .card-s {
   position: relative;
-  background-image: url("../../assets/images/post_default.jpg");
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 10px;
@@ -727,7 +720,7 @@ textarea {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.775);
+  background-color: black;
   border-radius: 10px;
   z-index: -1;
 }
@@ -741,78 +734,26 @@ textarea {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  color: #f1f1f1;
+  color: black;
 }
 
 .wrapper-card.chart {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  grid-auto-flow: column;
+  gap: 3px;
+  overflow: auto;
+  white-space: nowrap; /* 하위 요소들이 가로로 나란히 배치될 수 있도록 합니다. */
 }
 
-.wrapper-card .wrapper-movie-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin: 24px 22px 0 22px;
-  color: #ffffff;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  text-align: left;
-}
-
-.wrapper-card .wrapper-sub-text {
-  position: absolute;
-  bottom: 0;
-  margin: 20px 22px;
-  width: 210px;
-  font-size: 12px;
-  text-align: left;
-}
-
-.wrapper-card .wrapper-sub-text .sub-title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  margin-right: 18px;
-  color: #cfcfcf;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-}
-
-.wrapper-card .wrapper-sub-text .sub-title .sub-text {
-  margin: 8px 0;
-  color: #f1f1f1;
-  font-family: "SpoqaHanSansNeo-Medium", sans-serif;
-  font-weight: 300;
-  display: inline-block;
-  overflow: hidden;
-  width: 250px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  word-break: keep-all;
-}
 
 .card-L {
   position: relative;
   width: 310px;
   height: 443.3px;
   z-index: 10;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
-.card-L:first-of-type {
-  margin-right: 20px;
-}
 
 .card-L .wrapper-movie-title {
   margin-top: 40px;
@@ -820,9 +761,11 @@ textarea {
 
 .card-L .wrapper-movie-title #movie-title {
   display: -webkit-box;
+  /* 텍스트 오버플로우시 텍스트 숨기고 생략부호로 표시 */
   overflow: hidden;
   width: 96%;
   text-overflow: ellipsis;
+  /* 최대 2줄로 제한 */
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   word-break: keep-all;
@@ -842,12 +785,10 @@ textarea {
 }
 
 .card-L.search {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   height: 425px;
 }
 
+/* 크기 조정 */
 .card-m {
   position: relative;
   width: 210px;
@@ -924,7 +865,7 @@ textarea {
 .review-album .card-s {
   width: 205px;
   height: 205px;
-  background-image: url("../../assets/images/min_post_default.jpg");
+  background-image: url("../../redlogo.png");
   background-position: center center;
 }
 
@@ -964,24 +905,8 @@ textarea {
   word-break: keep-all;
 }
 
-.review-album .card-s .rate-star {
-  position: relative;
-  width: 120px;
-  height: 24px;
-  background-image: url("../../assets/icons/stars-gray.svg");
-}
 
-.review-album .card-s .rate-star::after {
-  content: '';
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: var(--width-rating);
-  height: 100%;
-  background-image: url("../../assets/icons/star-yellow.svg");
-}
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 844px) {
   .card-L:first-of-type {
     display: none;
   }
@@ -989,9 +914,12 @@ textarea {
     display: block;
   }
   .wrapper-card.chart {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3px;
+    overflow: auto;
+    white-space: nowrap; /* 하위 요소들이 가로로 나란히 배치될 수 있도록 합니다. */
+}
   .review-album {
     -ms-grid-columns: (160px)[3];
         grid-template-columns: repeat(3, 160px);
@@ -1023,32 +951,55 @@ textarea {
 
 @media screen and (max-width: 550px) {
   .wrapper-card.chart {
-    -ms-grid-columns: (1fr)[1];
-        grid-template-columns: repeat(1, 1fr);
-  }
-  .review-album {
-    max-height: 600px;
-    -ms-grid-columns: (160px)[2];
-        grid-template-columns: repeat(2, 160px);
-  }
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3px;
+    overflow: auto;
+    white-space: nowrap; /* 하위 요소들이 가로로 나란히 배치될 수 있도록 합니다. */
 }
 
+
 .header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: fixed;
   top: 0;
-  z-index: 9999;
+  left: 0;
   width: 100%;
-  background-color: #292929;
+  z-index: 9999;
+  background-color: white;
+  border-bottom: 1px solid #ddd; /* 원하는 스타일로 헤더의 하단 경계선을 추가할 수 있습니다. */
 }
+
+/* Footer 스타일 수정 */
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background-color: white;
+  border-top: 1px solid #ddd; /* 원하는 스타일로 푸터의 상단 경계선을 추가할 수 있습니다. */
+}
+
+.footer .nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+.footer .nav li {
+  margin-right: 10px; /* 각 li 요소 사이에 오른쪽 마진 추가 */
+}
+
+.footer .nav li:last-child {
+  margin-right: 0; /* 마지막 li 요소의 마진을 0으로 설정하여 마지막에 간격이 없도록 함 */
+}
+
+.footer .nav li a {
+  text-decoration: none;
+  color: black;
+}
+
 
 .img-logo {
   height: 70px;
@@ -1069,21 +1020,6 @@ textarea {
   background: url("../../assets/icons/menu.svg") no-repeat 0 0;
 }
 
-.nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin-right: 90px;
-  letter-spacing: -0.02em;
-}
-
-.nav li {
-  padding-left: 24px;
-  color: #cfcfcf;
-  font-family: "SpoqaHanSansNeo-Bold", sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-}
 
 .nav li:hover,
 .nav li a.selected {
@@ -1091,9 +1027,8 @@ textarea {
 }
 
 .main {
-  position: relative;
-  min-height: calc(100vh - 131px);
-  margin-top: 70px;
+  margin-top: 70px; /* Adjust margin as needed */
+  width: 100%; /* Full width */
 }
 
 .wrapper-etc {
@@ -1138,101 +1073,104 @@ textarea {
 }
 
 .footer {
-  z-index: 9999;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 10px;
-  background-color: #292929;
-  color: #dedede;
-  text-align: center;
-}
-
-.footer .desc {
-  display: inline-block;
-  margin: 8px 0 5px;
-  font-size: 10px;
-}
-
-.footer .wrapper-github {
-  display: -webkit-box;
-  display: -ms-flexbox;
+  height: 100px; /* 필요에 따라 높이 조절 */
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 5px;
-  margin: 0 5% 5px;
-  font-size: 10px;
-  text-align: center;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  z-index: 9999;
+  background-color: white;
 }
 
-.footer .wrapper-github .text-s {
-  font-size: 8px;
+.footer .nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
+
+.footer .nav li {
+  margin-right: 10px; /* 각 li 요소 사이에 오른쪽 마진 추가 */
+}
+
+.footer .nav li:last-child {
+  margin-right: 0; /* 마지막 li 요소의 마진을 0으로 설정하여 마지막에 간격이 없도록 함 */
+}
+
+.footer .nav li a {
+  text-decoration: none;
+  color: black;
+}
+
+
 
 .page-title {
-  color: #f1f1f1;
+  color: black;
   font-family: "SpoqaHanSansNeo-Bold", sans-serif;
   font-size: 30px;
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 844px) {
   .header {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: white;
+    border-bottom: 1px solid #ddd; /* 원하는 스타일로 헤더의 하단 경계선을 추가할 수 있습니다. */
   }
+  
+  /* Footer 스타일 수정 */
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background-color: white;
+    border-top: 1px solid #ddd; /* 원하는 스타일로 푸터의 상단 경계선을 추가할 수 있습니다. */
+  }
+  
+  .footer .nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .footer .nav li {
+    margin-right: 10px; /* 각 li 요소 사이에 오른쪽 마진 추가 */
+  }
+  
+  .footer .nav li:last-child {
+    margin-right: 0; /* 마지막 li 요소의 마진을 0으로 설정하여 마지막에 간격이 없도록 함 */
+  }
+  
+  .footer .nav li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  
+
   .img-logo img {
-    content: url("../../assets/icons/logo-title-s.svg");
+    content: url("../image/redfulllogo.png");
     margin: 13px 0 0 0;
     height: 52px;
   }
-  .img-logo .btn-nav {
+  .img-logo {
     display: block;
     top: 25px;
   }
-  .nav {
-    display: none;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    width: 100%;
-    margin-right: 0;
-  }
-  .nav.active {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .nav li {
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-  }
-  .nav li:last-child {
-    padding-bottom: 20px;
-  }
-  .nav li a {
-    display: block;
-  }
+
+  
   .main {
-    margin-bottom: 30px;
-  }
-  .main.active {
-    margin-top: 296px;
+    margin-top: 70px; /* Adjust margin as needed */
+    width: 100%; /* Full width */
   }
 }
 
@@ -1272,7 +1210,7 @@ textarea {
 .modal-dropbox .btn-dropbox {
   width: 100%;
   text-align: left;
-  color: #dedede;
+  color: black;
   font-family: "SpoqaHanSansNeo-Regular", sans-serif;
   font-size: 13px;
   padding: 10px 13px;
@@ -1285,7 +1223,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: black;
 }
 
 .modal-alert-container.disabled {
@@ -1303,7 +1241,7 @@ textarea {
   background-color: #292929;
   text-align: center;
   border-radius: 10px;
-  color: #f1f1f1;
+  color: black;
 }
 
 .modal-alert-container .modal-alert .message {
@@ -1320,7 +1258,7 @@ textarea {
   width: 50%;
   padding: 14px 0;
   border-top: 0.5px solid #767676;
-  color: #f1f1f1;
+  color: black;
   font-size: 14px;
   line-height: 18px;
 }
@@ -1337,24 +1275,4 @@ textarea {
   width: 0.5px;
   height: 100%;
   background-color: #767676;
-}
-
-@media screen and (max-width: 550px) {
-  .modal-dropbox {
-    width: 62px;
-    right: -2px;
-  }
-  .modal-dropbox .btn-dropbox {
-    font-size: 12px;
-  }
-  .modal-alert-container .modal-alert {
-    width: 220px;
-  }
-  .modal-alert-container .modal-alert .message {
-    padding: 26px 40px 22px;
-    font-size: 13px;
-  }
-  .modal-alert-container .modal-alert .btn-alert {
-    font-size: 13px;
-  }
 }
